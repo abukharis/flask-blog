@@ -1,0 +1,20 @@
+<!-- this is a very simple html file to demonstrate the template functionality -->
+{% extends 'layout.html' %}
+<h1>{{ title }}</h1>
+<body> welcom to home</body>
+
+{% block body_content %}
+    <a href="{{ url_for('about') }}">About Page</a>
+    <a href="{{ url_for('login') }}">login Page</a>
+    <a href="{{ url_for('register') }}">register Page</a>
+
+
+    {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p><b> - First name:</b>{{ post.name.first }}</p>
+            <p><b> - Last name:</b>{{ post.name.last }}</p>
+            <p> -- {{ post.content }}</p>
+        </div>
+    {% endfor %}
+{% endblock body_content %}
