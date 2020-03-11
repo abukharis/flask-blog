@@ -2,6 +2,10 @@
 {% block body_content %}
 <h1> about </h1>
     
+{% for post in posts %}
+
 
     <body> welcome to about </body>
+    <p><b> - First_name:</b>{{ post.first_name }}</p>
+    {% endfor %}
 {% endblock body_content %}

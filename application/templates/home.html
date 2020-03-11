@@ -4,17 +4,15 @@
 <body> welcom to home</body>
 
 {% block body_content %}
-    <a href="{{ url_for('about') }}">About Page</a>
-    <a href="{{ url_for('login') }}">login Page</a>
-    <a href="{{ url_for('register') }}">register Page</a>
+    
 
-
-    {% for post in posts %}
+    {% for post1 in posts %}
         <div>
-            <h3>{{ post.title }}</h3>
-            <p><b> - First name:</b>{{ post.name.first }}</p>
-            <p><b> - Last name:</b>{{ post.name.last }}</p>
-            <p> -- {{ post.content }}</p>
+            <h3>{{ post1.title }}</h3>
+            <p><b> - First_name:</b>{{ post1.first_name }}</p>
+            <p><b> - Last_name:</b>{{ post1.last_name }}</p>
+            {{ post1.title }}
+            <p> -- {{ post1.content }}</p>
         </div>
     {% endfor %}
 {% endblock body_content %}
