@@ -1,17 +1,18 @@
 <!-- this is a very simple html file to demonstrate the template functionality -->
 {% extends 'layout.html' %}
 <h1>{{ title }}</h1>
-<body> welcom to home</body>
+
 
 {% block body_content %}
     
-
+<body> welcom to home</body>
     {% for post1 in posts %}
         <div>
             <h3>{{ post1.title }}</h3>
-            <p><b> - First_name:</b>{{ post1.first_name }}</p>
-            <p><b> - Last_name:</b>{{ post1.last_name }}</p>
+            <p><b> - First_name:</b>{{ post1.author.first_name }}</p>
+            <p><b> - Last_name:</b>{{ post1.author.last_name }}</p>
             {{ post1.title }}
+            <span>on the <i>{{ post1.date_posted }}</i></span>
             <p> -- {{ post1.content }}</p>
         </div>
     {% endfor %}
